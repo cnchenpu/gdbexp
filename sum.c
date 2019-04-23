@@ -24,6 +24,7 @@ int main(int argc, char** argv)
 {
 	u64 sum = 0;
 
+	printf("MAX = %llu\n", MAX);
 	if((argc == 2) && isdigit(*(argv[1])))
 		max_addend = strtoul(argv[1], NULL, 0);
 	if(max_addend > MAX || max_addend == 0)	{
