@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-#define MAX (1UL << 20)
+#define MAX (1UL << 20) /* 1048576 */
 
 typedef unsigned long long u64;
 typedef unsigned int u32;
@@ -24,11 +24,10 @@ int main(int argc, char** argv)
 {
 	u64 sum = 0;
 
-	printf("MAX = %llu\n", MAX);
 	if((argc == 2) && isdigit(*(argv[1])))
 		max_addend = strtoul(argv[1], NULL, 0);
 	if(max_addend > MAX || max_addend == 0)	{
-		fprintf(stderr, "Invalid number is specified\n");
+		fprintf(stderr, "Invalid number is specified. MAX: %llu\n", MAX);
 		return 1;
 	}
 
